@@ -13,7 +13,7 @@ YOFF=17
 XOFF=0
 
 #fields to be displayed
-FIELDS=SSID,SECURITY,BARS
+FIELDS=SSID,MODE,FREQ,SECURITY,BARS
 
 #font
 FONT="DejaVu Sans Mono 8"

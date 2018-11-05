@@ -26,7 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=10
-markup=none
+markup=pango
 
 # Volume indicator
 #
@@ -34,10 +34,8 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-#label=VOL
 label=🔉
 instance=Master
-#instance=PCM
 interval=once
 signal=10
 
@@ -60,11 +58,10 @@ label=RAM
 separator=false
 interval=30
 
-[memory]
-label=💾
-instance=swap
-separator=false
-interval=30
+[temperature]
+label=TEMP
+interval=10
+
 
 # Disk usage
 #
@@ -82,22 +79,15 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-#color=#00FF00
+label=🌐
+color=#00FF00
 interval=60
-separator=false
+separator=true
 
 [wifi]
 command=i3wifi
-instance=wlp2s0
-interval=10
-
-#[bandwidth]
-#instance=eth0
-#interval=5
-
-
-#[load_average]
-#interval=10
+INTERFACE=wlp2s0
+interval=60
 
 # Battery indicator
 #
@@ -114,43 +104,3 @@ interval=30
 label=📅
 command=echo $(date '+(%a) %d %b %Y 🕓 %I:%M%p')
 interval=30
-
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-#[mediaplayer]
-#instance=spotify
-#interval=5
-#signal=10
-
-# OpenVPN support
-#
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
-
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
-
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
-
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11
