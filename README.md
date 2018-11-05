@@ -1,5 +1,6 @@
 ### TODO
-- [ ] Disable Ctrl+S and Ctrl+Q
+- [ ] Disable Ctrl+S and Ctrl+Q.
+- [ ] Find a non-distructive way to change prompt for zsh's vim plugin.
 
 ### Shell - oh-my-zsh
 Install
