@@ -1,6 +1,7 @@
 #Ignore everything
 /*
 
+!bin
 !i3
 !i3blocks
 !rofi
