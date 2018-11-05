@@ -1,2 +1,2 @@
 ### TODO
-- [] Disable Ctrl+S and Ctrl+Q
+- [ ] Disable Ctrl+S and Ctrl+Q
