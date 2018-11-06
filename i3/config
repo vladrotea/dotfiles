@@ -2,9 +2,13 @@ set $mod Mod4
 
 # Composite manager:
 exec --no-startup-id compton
+#Polybar
+#exec_always --no-startup-id polybar_launch
 
 #Disable title bars
 for_window [class="^.*"] border pixel 1
+#always open zoom in floating mode
+for_window [class="zoom"] floating enable
 
 font pango:mono 8
 
