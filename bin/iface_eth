@@ -33,6 +33,8 @@ fi
 #------------------------------------------------------------------------
 
 if [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
+  printf '\uf701\n'
+  printf '\uf701\n'
   exit
 fi
 
@@ -54,5 +56,5 @@ esac
 
 #------------------------------------------------------------------------
 
-echo "$IPADDR" # full text
+echo -e "\uf700 $IPADDR" # full text
 echo "$IPADDR" # short text

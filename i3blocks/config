@@ -24,8 +24,9 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=10
+command=/home/vlad/.config/bin/$BLOCK_NAME
+separator=false
+separator_block_width=20
 markup=pango
 
 # Volume indicator
@@ -34,33 +35,34 @@ markup=pango
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=🔉
 instance=Master
 interval=once
 signal=10
+color=#589df6
 
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
 interval=10
-#min_width=CPU: 100.00%
+#min_width=x 100%
 separator=false
+color=#21b089
 
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=RAM
 separator=false
-interval=30
+interval=3
+color=#21b089
 
 [temperature]
-label=TEMP
-interval=10
+separator=false
+interval=2
+color=#E88939
 
 
 # Disk usage
@@ -69,38 +71,44 @@ interval=10
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=💽
-#instance=/mnt/data
 interval=30
+color=#21b089
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[iface]
-#instance=wlan0
-label=🌐
-color=#00FF00
-interval=60
-separator=true
-
 [wifi]
 command=i3wifi
 INTERFACE=wlp2s0
 interval=60
+separator_block_width=10
+color=#589df6
+
+[iface]
+instance=wlp2s0
+color=#589df6
+interval=10
+
+[iface_eth]
+instance=enp0s31f6
+color=#589df6
+interval=10
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
-#label=BAT
-label=⚡
-#instance=1
 interval=30
 
-# Date Time
-#
+# Time
 [time]
-label=📅
-command=echo $(date '+(%a) %d %b %Y 🕓 %I:%M%p')
-interval=30
+command=bash -c 'printf "\uf017 "' && date '+%I:%M'
+interval=5
+color=#21b089
+
+# Date
+[date]
+command=bash -c 'printf "\uf073 "' && date '+%a,%e %b '
+interval=60
+color=#f9555f

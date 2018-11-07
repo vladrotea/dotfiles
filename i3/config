@@ -124,9 +124,43 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# Defining colors
+
+# RGB
+set $cyan0     #4ec2f7
+set $silver0 #e4e4e4
+set $orange  #ff8700
+
+# RGBA
+set $cyan    #4ec2f799
+set $acqua     #00708999
+set $wine      #72003e99
+set $magenta #af005f99
+set $silver  #e4e4e499
+set $toxic   #8EC00099
+## set $elegant #00002c00
+set $elegant #00263647
+
+# Set some nice colors      border     background text       indicator
+client.focused              $cyan    $cyan      $elegant $cyan
+client.unfocused            $elegant $elegant   $cyan    $elegant
+client.focused_inactive     $acqua   $acqua     $silver  $acqua
+client.urgent               $magenta $magenta   $silver  $magenta
+client.placeholder $magenta $magenta $silver $magenta
+
 #Workspace bar
 bar {
-        status_command i3blocks
-        position top
-        mode dock
+    status_command i3blocks
+    position top
+    #mode dock
+    font pango: Hack Nerd Font Black 10
+	colors
+	{
+                        # Border	# Background	# Text
+		focused_workspace   $silver0  $silver0  $elegant
+		active_workspace    $elegant  $elegant  $orange
+		inactive_workspace  $elegant  $elegant 	$cyan0
+		urgent_workspace    $acqua    $acqua    $silver0
+		background          $elegant
+	}
 }
