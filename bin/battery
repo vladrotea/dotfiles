@@ -35,40 +35,33 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
-$full_text = "$percent%";
 
-if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
-} elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
+if ($percent < 10) {
+    $full_text .= $status eq 'Discharging' ? "\x{f244}" : "\x{f584}";
+} elsif ($percent < 25) {
+    $full_text .= $status eq 'Discharging' ? "\x{f243}" : "\x{f586}";
+} elsif ($percent < 50) {
+    $full_text .= $status eq 'Discharging' ? "\x{f242}" : "\x{f588}";
+} elsif ($percent < 75) {
+    $full_text .= $status eq 'Discharging' ? "\x{f241}" : "\x{f589}";
+} else {
+    $full_text .= $status eq 'Discharging' ? "\x{f240}" : "\x{f584}";
 }
 
-$short_text = $full_text;
 
+if ($status eq 'Discharging' and $percent < 5) {
+    print "#FF0000\n";
+    exit(33);
+}
+
+$full_text .= " $percent%";
 if ($acpi =~ /(\d\d:\d\d):/) {
 	$full_text .= " ($1)";
 }
 
-# print text
+utf8::encode($full_text);
+$short_text = $full_text;
 print "$full_text\n";
 print "$short_text\n";
-
-# consider color and urgent flag only on discharge
-if ($status eq 'Discharging') {
-
-	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
-
-	if ($percent < 5) {
-		exit(33);
-	}
-}
 
 exit(0);

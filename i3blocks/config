@@ -81,7 +81,7 @@ color=#21b089
 [wifi]
 command=i3wifi
 INTERFACE=wlp2s0
-interval=60
+interval=10
 separator_block_width=10
 color=#589df6
 
@@ -100,6 +100,7 @@ interval=10
 # The battery instance defaults to 0.
 [battery]
 interval=30
+color=#21b089
 
 # Time
 [time]

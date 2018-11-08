@@ -54,7 +54,7 @@ if ($cpu_usage >= $t_crit) {
     #print "#FFFC00\n";
     print "#fd971f\n";
 } else {
-    print "#8CE000\n";
+    print "#E88939\n";
 }
 
 exit 0;
