@@ -29,16 +29,24 @@ separator=false
 separator_block_width=20
 markup=pango
 
+#if you prefer automatic updating
+[volume-pulseaudio]
+interval=persist
+SUBSCRIBE=1
+USE_ALSA_NAME=1
+markup=pango
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
-instance=Master
-interval=once
-signal=10
-color=#589df6
+#[volume]
+#instance=Master
+#interval=once
+#signal=10
+#MIXER=pulse
+#color=#589df6
 
 # CPU usage
 #
