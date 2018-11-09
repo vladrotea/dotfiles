@@ -28,6 +28,7 @@ command=/home/vlad/.config/bin/$BLOCK_NAME
 separator=false
 separator_block_width=20
 markup=pango
+color=#589df6
 
 #if you prefer automatic updating
 [volume-pulseaudio]
@@ -111,13 +112,12 @@ interval=30
 color=#21b089
 
 # Time
-[time]
-command=bash -c 'printf "\uf017 "' && date '+%I:%M'
-interval=5
+[calendar]
+#command=bash -c 'printf "\uf017 "' && date '+%I:%M'
+interval=2
+DATEFMT=+%H:%M
 color=#21b089
 
-# Date
-[date]
-command=bash -c 'printf "\uf073 "' && date '+%a,%e %b '
-interval=60
-color=#f9555f
+#[rofi-calendar]
+#interval=3600
+#LABEL=
