@@ -5,9 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -15,9 +14,24 @@ filetype plugin indent on    " required
 set cursorline
 set number
 
-" Moving
-" ========== 
+" Editing
+" =======
 
+" Tabs
+set expandtab
+set shiftwidth=4
+set tabstop=4
+
+" Disable retarded automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Automatically delete all trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+
+" Moving
+" ==========
+" Hardish mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -29,11 +43,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Tabs
-" =========
-set expandtab
-set shiftwidth=4
-set tabstop=4
 
 " Swap
 " =========
@@ -41,15 +50,22 @@ set nobackup
 set nowb
 set noswapfile
 
-"Markdown previewer
-let vim_markdown_preview_github=1
 
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Wildmenu
+" =========================
+set wildmenu
+set wildmode=list:longest,full
+
+
+" Nerdtree
+" =========
+map <C-n> :NERDTreeToggle<CR>
+
+
+" Highlight excessive line length stand out
+" https://www.youtube.com/watch?v=aHm36-na4-4
+" Line length is based on 90ish idea from Hettinger; 80 + 10% = 88 chars
+" https://www.youtube.com/watch?v=wf-BqAjZb8M
+" ======================================================================
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
