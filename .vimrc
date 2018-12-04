@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+syntax on
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,6 +10,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/goyo.vim'
+
+" js related
+Plugin 'pangloss/vim-javascript'
+Plugin 'darthmall/vim-vue'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,6 +42,12 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Wrap Markdown at 80 chars
 autocmd BufRead,BufNewFile *.md set tw=80
+
+" Allow JSX syntax in normal .js files
+let g:jsx_ext_required = 0
+
+" https://www.npmjs.com/package/standard
+autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
 
 
 " Moving
