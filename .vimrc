@@ -7,12 +7,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 set cursorline
 set number
+
+" Focus mode on high res screens i.e center text in terminal
+map <leader>f :Goyo \| set linebreak<CR>
+
 
 " Editing
 " =======
@@ -27,6 +32,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Automatically delete all trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" Wrap Markdown at 80 chars
+autocmd BufRead,BufNewFile *.md set tw=80
 
 
 " Moving
