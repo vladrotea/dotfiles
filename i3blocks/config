@@ -20,104 +20,70 @@
 # signal
 # urgent
 
-# Global properties
-#
-# The top properties below are applied to every block, but can be overridden.
-# Each block command defaults to the script name to avoid boilerplate.
-command=/home/vlad/.config/bin/$BLOCK_NAME
+command=$HOME/.config/i3blocks/blocks/$BLOCK_NAME/$BLOCK_NAME
 separator=false
 separator_block_width=20
 markup=pango
-color=#589df6
+color=#21b089
 
-#if you prefer automatic updating
 [volume-pulseaudio]
 interval=persist
 SUBSCRIBE=1
 USE_ALSA_NAME=1
-markup=pango
+AUDIO_HIGH_SYMBOL=
+AUDIO_MED_SYMBOL=
+AUDIO_LOW_SYMBOL=
+AUDIO_MUTED_SYMBOL=
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-#[volume]
-#instance=Master
-#interval=once
-#signal=10
-#MIXER=pulse
-#color=#589df6
-
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
 [cpu_usage]
 interval=10
-#min_width=x 100%
-separator=false
-color=#21b089
+LABEL= 
+DECIMALS=0
+T_WARN=90
+T_CRIT=95
 
-
-# Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
 [memory]
-separator=false
 interval=3
-color=#21b089
+label= 
 
 [temperature]
-separator=false
 interval=2
-color=#E88939
+label= 
 
-
-# Disk usage
-#
-# The directory defaults to $HOME if the instance is not specified.
-# The script may be called with a optional argument to set the alert
-# (defaults to 10 for 10%).
 [disk]
 interval=30
-color=#21b089
+label= 
 
-# Network interface monitoring
-#
-# If the instance is not specified, use the interface used for default route.
-# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [wifi]
-command=i3wifi
 INTERFACE=wlp2s0
 interval=10
-separator_block_width=10
 color=#589df6
+RUN_ON_CLICK=rofi-wifi-menu
+LABEL= 
+LABEL_DOWN=睊
+separator_block_width=10
 
 [iface]
 instance=wlp2s0
 color=#589df6
 interval=10
+STATE_DOWN_LABEL=
+STATE_DOWN_COLOR=#589df6
 
-[iface_eth]
+[iface]
 instance=enp0s31f6
 color=#589df6
 interval=10
+LABEL= 
+STATE_DOWN_LABEL=
+STATE_DOWN_COLOR=#589df6
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
+[battery2]
 interval=30
 color=#21b089
 
-# Time
 [calendar]
-#command=bash -c 'printf "\uf017 "' && date '+%I:%M'
+label= 
 interval=2
 DATEFMT=+%H:%M
 color=#21b089
-
-#[rofi-calendar]
-#interval=3600
-#LABEL=
