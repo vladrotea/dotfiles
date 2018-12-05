@@ -1,7 +1,7 @@
 # IDC, first thing first disable C-s, teletypes are gone
 stty -ixon
 
-source ~/.config/bin/antigen.zsh
+source ~/.config/.zsh/antigen.zsh
 
 # From the oh-my-zsh's library.
 antigen use oh-my-zsh

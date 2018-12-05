@@ -1,3 +1,0 @@
-[submodule "scripts/rofi-wifi-menu"]
-	path = scripts/rofi-wifi-menu
-	url = https://github.com/zbaylin/rofi-wifi-menu.git
