@@ -1,5 +1,5 @@
 set $mod Mod4
-#gaps outer 5 
+#gaps outer 5
 gaps inner 5
 # Composite manager:
 exec --no-startup-id compton
@@ -128,11 +128,11 @@ bindsym $mod+r mode "resize"
 # Volume control
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
 
 bindsym $mod+F1 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym $mod+F2 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym $mod+F3 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym $mod+F3 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -152,8 +152,8 @@ set $wine      #72003e99
 set $magenta #af005f99
 set $silver  #e4e4e499
 set $toxic   #8EC00099
-## set $elegant #00002c00
 set $elegant #002636af
+set $blackish #000006ef
 
 # Set some nice colors      border     background text       indicator
 client.focused              $cyan    $cyan      $elegant $cyan
@@ -168,7 +168,7 @@ bar {
     i3bar_command i3bar -t
     position top
     #mode dock
-    font pango: Hack Nerd Font Black 8 
+    font pango: Hack Nerd Font Black 9
 	colors
 	{
                         # Border	# Background	# Text
@@ -176,6 +176,6 @@ bar {
 		active_workspace    $elegant  $elegant  $orange
 		inactive_workspace  $elegant  $elegant 	$cyan0
 		urgent_workspace    $acqua    $acqua    $silver0
-		background          $elegant
+		background          $blackish
 	}
 }
