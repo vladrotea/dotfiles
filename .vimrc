@@ -22,6 +22,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 "Plugin 'w0rp/ale'
 
+Plugin 'hail2u/vim-css3-syntax'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
