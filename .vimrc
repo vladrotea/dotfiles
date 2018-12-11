@@ -24,6 +24,8 @@ Plugin 'elzr/vim-json'
 
 Plugin 'hail2u/vim-css3-syntax'
 
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
