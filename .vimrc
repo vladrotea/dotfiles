@@ -77,6 +77,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Splits open bottom & right
+set splitbelow splitright
+
 " Fzf
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
