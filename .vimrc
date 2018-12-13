@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-surround'
 
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
@@ -57,6 +58,8 @@ let g:jsx_ext_required = 0
 " https://www.npmjs.com/package/standard
 autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
 
+"For some reason this is not set by default in macos
+set ruler
 
 " Moving
 " ==========
