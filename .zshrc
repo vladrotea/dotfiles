@@ -29,3 +29,7 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
+
+# stop relaying on /etc/profile
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
