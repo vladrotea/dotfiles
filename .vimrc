@@ -15,6 +15,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " js related
 " https://drivy.engineering/setting-up-vim-for-react/
 Plugin 'pangloss/vim-javascript'
@@ -27,15 +31,22 @@ Plugin 'hail2u/vim-css3-syntax'
 
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 
+Plugin 'romainl/Apprentice'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 set cursorline
 set number
+"For some reason this is not set by default in macos
+set ruler
 
 " Focus mode on high res screens i.e center text in terminal
 map <leader>f :Goyo \| set linebreak<CR>
 
+"Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='minimalist'
 
 " Editing
 " =======
@@ -44,6 +55,7 @@ map <leader>f :Goyo \| set linebreak<CR>
 set expandtab
 set shiftwidth=4
 set tabstop=4
+colorscheme apprentice
 
 " Disable retarded automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -59,9 +71,6 @@ let g:jsx_ext_required = 0
 
 " https://www.npmjs.com/package/standard
 autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
-
-"For some reason this is not set by default in macos
-set ruler
 
 " Moving
 " ==========
