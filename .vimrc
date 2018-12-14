@@ -7,14 +7,12 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-surround'
-
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
-
+Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'w0rp/ale'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -25,10 +23,12 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'darthmall/vim-vue'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
-"Plugin 'w0rp/ale'
-
 Plugin 'hail2u/vim-css3-syntax'
 
+" python
+Plugin 'davidhalter/jedi-vim'
+
+" CI
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 Plugin 'romainl/Apprentice'
@@ -122,6 +122,8 @@ set wildmode=list:longest,full
 " =========
 map <C-n> :NERDTreeToggle<CR>
 
+let g:ale_linters = {'python': ['flake8']}
+let g:jedi#popup_on_dot = 0
 
 " Highlight excessive line length stand out
 " https://www.youtube.com/watch?v=aHm36-na4-4
