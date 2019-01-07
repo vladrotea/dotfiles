@@ -32,6 +32,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 Plugin 'romainl/Apprentice'
+Plugin 'kiddos/malokai.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -55,7 +56,7 @@ let g:airline_theme='minimalist'
 set expandtab
 set shiftwidth=4
 set tabstop=4
-colorscheme apprentice
+colorscheme malokai
 
 " Disable retarded automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
