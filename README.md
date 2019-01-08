@@ -6,7 +6,7 @@
 
 ### OSX
 * ~WM: chunkwm + skhd
-* Terminal: ITerm2 - I don't like it that much, is there a better alternative?
+* Terminal: kitty
 
 ### TODO
 - [x] Switch from on-my-zsh to antigen.
