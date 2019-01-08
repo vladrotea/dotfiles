@@ -16,3 +16,6 @@
 !.zshrc
 !.gitignore
 !.gitsubmodule
+
+!chunkwm
+!skhd
