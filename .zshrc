@@ -33,3 +33,6 @@ antigen apply
 # stop relaying on /etc/profile
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

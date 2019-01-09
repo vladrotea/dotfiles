@@ -1,45 +1,42 @@
-set nocompatible              " be iMproved, required
-syntax on
-filetype off                  " required
+set nocompatible
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " js related
 " https://drivy.engineering/setting-up-vim-for-react/
-Plugin 'pangloss/vim-javascript'
-Plugin 'darthmall/vim-vue'
-Plugin 'mxw/vim-jsx'
-Plugin 'elzr/vim-json'
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'darthmall/vim-vue'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'hail2u/vim-css3-syntax'
 
 " python
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " CI
-Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
-Plugin 'romainl/Apprentice'
-Plugin 'kiddos/malokai.vim'
+" Colors
+Plug 'romainl/Apprentice'
+Plug 'kiddos/malokai.vim'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
+
+syntax on
+filetype plugin indent on
 
 set cursorline
 set number
-"For some reason this is not set by default in macos
 set ruler
 
 " Focus mode on high res screens i.e center text in terminal
@@ -73,29 +70,32 @@ let g:jsx_ext_required = 0
 " https://www.npmjs.com/package/standard
 autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
 
-" Moving
-" ==========
-" Hardish mode
+" Keyboards shortcuts
+" ============================================================================
+
+"" Hardish mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-" Smart way to move between windows
+"" Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Splits open bottom & right
-set splitbelow splitright
+" If I really really want to see feedback from showcmd
+nmap <Space> \
 
-" Fzf
+nmap <leader>/ :Find<Enter>
+nmap <leader>n :FZF<Enter>
+
+" Fzf aka steroids for vim
+" ============================================================================
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
-nmap <leader>n :FZF<Enter>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -106,17 +106,32 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 " Swap
 " =========
 set nobackup
 set nowb
 set noswapfile
 
+" Splits open bottom & right
+set splitbelow splitright
 
 " Wildmenu
 " =========================
 set wildmenu
 set wildmode=list:longest,full
+set showcmd
 
 
 " Nerdtree
