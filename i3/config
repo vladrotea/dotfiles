@@ -168,8 +168,7 @@ bar {
     status_command i3blocks
     i3bar_command i3bar -t
     position top
-    #mode dock
-    font pango: Hack Nerd Font Black 9
+    font pango: TerminessTTF Nerd Font Mono Black 10
 	colors
 	{
                         # Border	# Background	# Text
