@@ -138,7 +138,7 @@ set showcmd
 " =========
 map <C-n> :NERDTreeToggle<CR>
 
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8'], 'c': []}
 let g:jedi#popup_on_dot = 0
 
 " Highlight excessive line length stand out
