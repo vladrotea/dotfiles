@@ -17,6 +17,7 @@ antigen bundle python
 antigen bundle pip
 antigen bundle django
 antigen bundle docker
+antigen bundle gangleri/pipenv
 
 # Syntax highlighting.
 antigen bundle zsh-users/zsh-syntax-highlighting
