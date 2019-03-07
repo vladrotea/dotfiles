@@ -1,6 +1,7 @@
 #Ignore everything
 /*
 
+!alacritty
 !bin
 !git
 !i3
@@ -19,4 +20,3 @@
 
 !chunkwm
 !skhd
-!kitty
