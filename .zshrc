@@ -39,3 +39,4 @@ export VISUAL=/usr/bin/vim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 alias v=nvim vi=nvim vim=nvim
+alias p=python3
