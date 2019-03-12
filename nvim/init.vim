@@ -26,14 +26,15 @@ Plug 'davidhalter/jedi-vim'
 " CI
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
-" Colors
-Plug 'romainl/Apprentice'
-Plug 'kiddos/malokai.vim'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
 syntax on
 filetype plugin indent on
+
+let g:seoul256_background = 233
+colo seoul256
 
 set cursorline
 set number
@@ -53,7 +54,6 @@ let g:airline_theme='minimalist'
 set expandtab
 set shiftwidth=4
 set tabstop=4
-colorscheme malokai
 
 " Disable retarded automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -146,5 +146,5 @@ let g:jedi#popup_on_dot = 0
 " Line length is based on 90ish idea from Hettinger; 80 + 10% = 88 chars
 " https://www.youtube.com/watch?v=wf-BqAjZb8M
 " ======================================================================
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%81v', 100)
