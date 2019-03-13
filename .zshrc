@@ -11,19 +11,27 @@ antigen bundle vi-mode
 antigen bundle git
 antigen bundle heroku
 antigen bundle command-not-found
+antigen bundle docker
 
 # Python stuff
+antigen bundle ansible
 antigen bundle python
 antigen bundle pip
 antigen bundle django
-antigen bundle docker
 antigen bundle gangleri/pipenv
+
+# JS
+antigne bundle npm
+antigne bundle yarn
 
 # Syntax highlighting.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # fish-like autosuggestions
 antigen bundle zsh-users/zsh-autosuggestions
+
+# more autocompletions
+antigen bundle zsh-users/zsh-completions
 
 # Load the theme.
 antigen theme robbyrussell
