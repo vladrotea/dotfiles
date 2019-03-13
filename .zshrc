@@ -21,8 +21,8 @@ antigen bundle django
 antigen bundle gangleri/pipenv
 
 # JS
-antigne bundle npm
-antigne bundle yarn
+antigen bundle npm
+antigen bundle yarn
 
 # Syntax highlighting.
 antigen bundle zsh-users/zsh-syntax-highlighting
