@@ -1,6 +1,5 @@
 ### Linux + macOS (striving for a consistent env)
-* WM (Linux): i3 + i3bar & i3bloks
-* WM (macOS) chunkwm + skhd
+* WM (Linux): i3 + i3bar & i3bloks; (macOS): chunkwm + skhd
 * Terminal: alacritty
 * Shell: zsh
 
