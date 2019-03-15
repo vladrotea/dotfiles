@@ -1,18 +1,21 @@
-### Linux
-* WM: i3
-* Terminal: alacritty 
+### Linux + macOS (striving for a consistent env)
+* WM (Linux): i3 + i3bar & i3bloks
+* WM (macOS) chunkwm + skhd
+* Terminal: alacritty
 * Shell: zsh
 
-### OSX
-* ~WM: chunkwm + skhd
-* Terminal: alacritty
+### Dependencies
+```
+cargo install exa
+```
 
 ### TODO
-- [ ] Decent color scheme for vimdiff
-- [ ] Give fish a try
+- [ ] Add all the dependencies
+- [ ] Find a non-distructive way to change prompt for zsh's vim plugin.
+- [ ] ~~Give fish a try
+- [x] Decent color scheme for vimdiff
 - [x] Switch from on-my-zsh to antigen.
 - [x] Disable Ctrl+S and Ctrl+Q.
-- [ ] Find a non-distructive way to change prompt for zsh's vim plugin.
-- ~~[ ] Clean st from the features I don't use~~
+- [ ] ~~Clean st from the features I don't use~~
 - [x] Rethink unicode strategy for i3blocks labels.
 - [x] Switch from Vundle to Plug

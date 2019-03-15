@@ -52,3 +52,8 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 alias v=nvim
 alias p=python3
+
+alias l='exa -lh'
+alias ls='exa'
+alias ll='exa -lh'
+alias lll='exa -lah'
