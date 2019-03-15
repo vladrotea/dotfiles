@@ -24,6 +24,10 @@ antigen bundle gangleri/pipenv
 antigen bundle npm
 antigen bundle yarn
 
+# Rust
+antigen bundle cargo
+antigen bundle rust
+
 # Syntax highlighting.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -46,5 +50,5 @@ export VISUAL=/usr/bin/vim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-alias v=nvim vi=nvim vim=nvim
+alias v=nvim
 alias p=python3

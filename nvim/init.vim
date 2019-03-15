@@ -10,7 +10,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-rooter' " cd working dir to git root dir automatically
 
 " js related
 " https://drivy.engineering/setting-up-vim-for-react/
@@ -23,10 +23,16 @@ Plug 'hail2u/vim-css3-syntax'
 " python
 Plug 'davidhalter/jedi-vim'
 
+" rust
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+
 " CI
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
+" Colors
 Plug 'junegunn/seoul256.vim'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
