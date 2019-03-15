@@ -4,7 +4,7 @@
 * Terminal: alacritty
 * Shell: zsh
 
-### Dependencies
+### Dependencies (in progress)
 ```
 cargo install exa
 ```
@@ -12,7 +12,7 @@ cargo install exa
 ### TODO
 - [ ] Add all the dependencies
 - [ ] Find a non-distructive way to change prompt for zsh's vim plugin.
-- [ ] ~~Give fish a try
+- [ ] ~~Give fish a try~~
 - [x] Decent color scheme for vimdiff
 - [x] Switch from on-my-zsh to antigen.
 - [x] Disable Ctrl+S and Ctrl+Q.
