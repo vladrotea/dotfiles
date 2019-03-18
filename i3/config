@@ -24,9 +24,9 @@ font pango:mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-# use st as default terminal
+# quick open
 bindsym $mod+Return exec alacritty
+bindsym $mod+backslash exec titanium
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -1,11 +1,18 @@
 ### Linux + macOS (striving for a consistent env)
+
+I really enjoy 'rusted' tools lately ;)
+
 * WM (Linux): i3 + i3bar & i3bloks; (macOS): chunkwm + skhd
+* Browser: [titanium](https://github.com/antoyo/titanium)
 * Terminal: alacritty
 * Shell: zsh
 
 ### Dependencies (in progress)
 ```
 cargo install exa
+
+# deps to get youtube working on surf/titanium browsers
+sudo apt install gstreamer1.0-libav gstreamer1.0-plugins-good
 ```
 
 ### TODO
