@@ -45,6 +45,7 @@ colo seoul256
 set cursorline
 set number
 set ruler
+set spell spelllang=en
 
 " Focus mode on high res screens i.e center text in terminal
 map <leader>f :Goyo \| set linebreak<CR>

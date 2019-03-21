@@ -57,3 +57,8 @@ alias l='exa -lh'
 alias ls='exa'
 alias ll='exa -lh'
 alias lll='exa -lah'
+alias la='exa -lah'
+
+alias gc='echo "You are not signing this commit" && git commit -v'
+alias gcs='git commit -v -s'
+
