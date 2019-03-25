@@ -47,6 +47,9 @@ set number
 set ruler
 set spell spelllang=en
 
+" For the love of my sanity using Java files
+set mouse=a
+
 " Focus mode on high res screens i.e center text in terminal
 map <leader>f :Goyo \| set linebreak<CR>
 
@@ -96,6 +99,9 @@ nmap <Space> \
 
 nmap <leader>/ :Find<Enter>
 nmap <leader>n :FZF<Enter>
+
+" Search word under cursor with rg
+nnoremap <silent> <Leader>3 :Find <C-R><C-W><CR>
 
 " Fzf aka steroids for vim
 " ============================================================================
