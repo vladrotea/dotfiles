@@ -66,7 +66,7 @@ set tabstop=4
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Automatically delete all trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\s\+$//e
 
 " Wrap Markdown at 80 chars
 autocmd BufRead,BufNewFile *.md set tw=80

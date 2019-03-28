@@ -12,6 +12,7 @@ antigen bundle git
 antigen bundle heroku
 antigen bundle command-not-found
 antigen bundle docker
+antigen bundle kubectl
 
 # Python stuff
 antigen bundle ansible
